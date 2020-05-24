@@ -16,9 +16,9 @@ class ListItem extends React.Component {
     }
   }
 
-  // {onClick = () => this.setState({ checked: !this.state.checked } = () => {
-  //   this.props.onCheck(this.props.ingredientName, this.state.checked)
-  // });}
+  onClick = () => this.setState({ checked: !this.state.checked }, () => {
+    this.props.onCheck(this.props.ingredientName, this.state.checked)
+  });
 
   render() {
     return (
@@ -33,10 +33,4 @@ class ListItem extends React.Component {
     );
   }
 }
-
-
-
-
-
-
 export default ListItem;
