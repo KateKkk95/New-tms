@@ -11,7 +11,6 @@ const Navigator = () => {
             <Switch>
                 <Route path='/' component={MainPage} />
                 <Route path='/users-page' component={UsersPage} />
-
             </Switch>
         </BrowserRouter >
 
