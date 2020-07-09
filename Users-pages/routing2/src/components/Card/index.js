@@ -8,9 +8,8 @@ const Card = ({ picture, name }) => {
             <img src={picture} className="card-image" />
             <div className="card-content">
                 <h2>{name.first}</h2>
-                <h4> {name.last}</h4>
+                <h4> {name.first}</h4>
             </div>
-
         </div>
     )
 }
