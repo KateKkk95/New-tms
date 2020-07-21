@@ -1,0 +1,42 @@
+.card {
+    display: flex;
+    flex-flow: nowrap;
+    width: 28rem;
+    padding: 1rem;
+    border: 1px solid gray;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: whitesmoke;
+}
+
+.card-image {
+    width: 6rem;
+    height: 6rem;
+    margin-right: 1rem;
+}
+
+.card-content {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 13rem;
+    font-size: 12px;
+}
+
+.card_button {
+    background-color: #ff8b38;
+    height: 43px;
+    width: 118px;
+    color: white;
+    font-family: "Myriad Pro", sans-serif;
+    font-size: 15px;
+    border-radius: 4px;
+    outline: none;
+    margin-top: 30px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.card-buttons {
+    display: flex;
+    flex-direction: column;
+}

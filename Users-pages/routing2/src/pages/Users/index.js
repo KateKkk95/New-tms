@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 import { Card } from '../../components';
+import './index.js';
+
 
 
 const UsersPage = () => {
@@ -22,10 +25,16 @@ const UsersPage = () => {
             <div className="page-users">
                 {users.map((item, i) => {
                     return (
-                        <Card
-                            picutre={item.picutre}
-                            name={item.name}
-                        />
+                        <Link 
+                        key={item._id}
+                        to= {`/users/${item.index}`}
+                        >
+                            <Card
+                                picutre={item.picutre}
+                                name={item.name}
+                                index={item.index}
+                            />
+                        </Link >
                     )
                 })}
             </div>
@@ -33,5 +42,4 @@ const UsersPage = () => {
         </div>
     )
 }
-
 export default UsersPage;
