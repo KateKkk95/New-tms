@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'
 
 import { Card } from '../../components';
 import './index.js';
@@ -25,9 +26,9 @@ const UsersPage = () => {
             <div className="page-users">
                 {users.map((item, i) => {
                     return (
-                        <Link 
-                        key={item._id}
-                        to= {`/users/${item.index}`}
+                        <Link
+                            key={item._id}
+                            to={`/users/${item.index}`}
                         >
                             <Card
                                 picutre={item.picutre}

@@ -18,10 +18,8 @@ const Navigator = () => {
                 <Route path={'/users/:index'} component={ProfilePage} />
                 <Route path={ROUTES.USERS} component={UsersPage} />
                 <Route path={ROUTES.PROFILE} component={ProfilePage} />
-                <Fragment>
-                    <SignIn />
-                    <Route path={ROUTES.MAIN} component={MainPage} />
-                </Fragment>
+
+                <Route path={ROUTES.MAIN} component={SignIn} />
             </Switch>
         </BrowserRouter >
     )

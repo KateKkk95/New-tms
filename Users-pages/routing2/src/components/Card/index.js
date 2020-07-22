@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 
 import './style.css';
@@ -10,11 +11,15 @@ const Card = ({ picture, name, index }) => {
 
     const dispatch = useDispatch();
 
-    onClickAdd = () => {
-        dispatch
+    const onClickAdd = () => {
+        dispatch({
+            type: 'Add',
+        });
     };
-    onClickDelete = () => {
-
+    const onClickDelete = () => {
+        dispatch({
+            type: 'Delete',
+        });
     };
     return (
         <Link to={`users/${index}`} >
@@ -25,8 +30,8 @@ const Card = ({ picture, name, index }) => {
                     <h4> {name.last}</h4>
                 </div>
                 <div className="card-buttons">
-                    <button className="card_button" >Add</button>
-                    <button className="card_button" >Delete</button>
+                    <button className="card_button" onClick={onClickAdd}>Add</button>
+                    <button className="card_button" onClick={onClickDelete}>Delete</button>
                 </div>
             </div>
         </Link>
