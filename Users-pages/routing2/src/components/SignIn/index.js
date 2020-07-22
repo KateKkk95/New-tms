@@ -29,7 +29,6 @@ class SignIn extends Component {
     state = {
         phone: '',
         password: '',
-        token: this.state.token,
     }
 
     render() {
