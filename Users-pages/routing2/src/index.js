@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 
 import Navigator from './navigation';
 import './index.css';
 import reducer from '../src/reducer';
+import logger from 'redux-logger';
 
-const Store = createStore(reducer)
+const Store = createStore((reducer), applyMiddleware(logger));
 
 
 ReactDOM.render(

@@ -1,6 +1,7 @@
 const initialState = {
     number: 0,
     token: null,
+    user: null,
 };
 
 const reducer = (state = initialState, action) => {
@@ -19,6 +20,12 @@ const reducer = (state = initialState, action) => {
         return {
             ...state,
             token: action.payload
+        };
+    }
+    if (action.type === 'userInfo') {
+        return {
+            ...state,
+            user: action.payload
         };
     }
 

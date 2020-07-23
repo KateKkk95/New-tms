@@ -4,7 +4,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 
 
-import { setToken } from '../../actions';
+import { setToken, userInfo } from '../../actions';
 import './style.css';
 
 
@@ -20,6 +20,10 @@ class SignIn extends Component {
                 })
 
             console.log(response);
+            console.log(response.data.token);
+
+            this.props.setToken(response.data.token);
+            this.props.userInfo(response.data);
         } catch (err) {
             console.log(err);
 
@@ -33,15 +37,16 @@ class SignIn extends Component {
 
     render() {
         return (
+
             <div className="sign-in">
 
                 <TextInput
-                    label="Email:"
+                    label="Phone:"
                     onChangeFromProps={(event) => { this.setState({ phone: event.target.value }) }}
                     valueFromProps={this.state.Email}
                 />
                 <TextInput
-                    label="Pincode:"
+                    label="Password:"
                     onChangeFromProps={(event) => { this.setState({ password: event.target.value }) }}
                     valueFromProps={this.state.Pincode}
                 />
@@ -53,4 +58,11 @@ class SignIn extends Component {
         )
     }
 }
-export default SignIn;
+
+const mapStateToProps = state => {
+    return {
+        num: state.number,
+    }
+}
+
+export default connect(mapStateToProps, { setToken, userInfo })(SignIn);

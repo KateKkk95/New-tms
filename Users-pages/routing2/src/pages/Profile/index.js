@@ -1,51 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 import './index.css';
+import { userInfo } from '../../actions';
 
 
-const ProfilePage = (props) => {
+class ProfilePage extends Component {
+    componentDidMount = () => {
+        // try {
+        //     const response = await axios.get(`http://localhost:3001/users/${props.match.params.index} `)
+        //     setUserData(response.data);
+        //     setLoading(false);
+        // } catch (err) {
+        //     console.log(err);
+        //     setLoading(false);
+        // }
 
-    const [userData, setUserData] = useState(null);
-    const [loading, setLoading] = useState(false);
+    }
+    render() {
 
-
-    useEffect(() => {
-        setLoading(true);
-        const getUser = async () => {
-
-            try {
-                const response = await axios.get(`http://localhost:3001/users/${props.match.params.index} `)
-                setUserData(response.data);
-                setLoading(false);
-            } catch (err) {
-                console.log(err);
-                setLoading(false);
-            }
-
-        }
-        getUser();
-    }, [props.match.params.index]);
-
-
-    return (
-        <div className="page">
-            {loading && <span>Loading...</span>}
-            <div>
-                <h1>PROFILE PAGE</h1>
+        return (
+            <div className="page">
+                <div>
+                    <h1>PROFILE PAGE</h1>
+                </div>
+                <div>
+                    <h2>{this.props.User}</h2>
+                </div>
             </div>
-            <div>
-                <h2>{userData?.picture}</h2>
-                <h2>{userData?.name.first}</h2>
-                <h2>{userData?.name.last}</h2>
-                <h2>{userData?.phone}</h2>
-                <h2>{userData?.address}</h2>
-                <h2>{userData?.friends}</h2>
-            </div>
-        </div>
 
-    );
+        );
+    }
+}
+const mapStateToProps = state => {
+    console.log(state)
+    return {
+        User: state.user
+    };
 }
 
-export default ProfilePage;
+export default connect(mapStateToProps, { userInfo })(ProfilePage);

@@ -1,3 +1,3 @@
+import NavBar from './NavBar';
 export * from './Card';
-export * from './NavBar';
-
+export { NavBar };
