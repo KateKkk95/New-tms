@@ -9,14 +9,12 @@ import { ROUTES } from '../../const';
 
 class NavBar extends Component {
     render() {
-
-        console.log(this.props.User)
         return (
             < nav className="navbar" >
-                <Link to={ROUTES.MAIN}> Main </ Link>
+                <Link to={ROUTES.MAIN}> Log in </ Link>
                 <Link to={ROUTES.USERS}> Users </Link>
-                <span> Friends:  {this.props.User?.length}</span>
-                <Link to={ROUTES.PROFILE}> Profile </Link>
+                <span> Friends:  {this.props.Friends?.length}</span>
+                <Link to={`/users/${this.props.userIndex}`}> Your Profile </Link>
             </nav>
         );
     }
@@ -27,7 +25,8 @@ const mapStateToProps = state => {
     return {
         token: state.token,
         number2: state.number,
-        User: state.user?.friends
+        Friends: state.user?.friends,
+        userIndex: state.user?.index
     }
 }
 

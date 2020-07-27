@@ -9,7 +9,10 @@ import './style.css';
 
 
 class SignIn extends Component {
-
+    state = {
+        phone: '',
+        password: '',
+    }
     SignIn = async () => {
 
         try {
@@ -30,25 +33,23 @@ class SignIn extends Component {
         }
     }
 
-    state = {
-        phone: '',
-        password: '',
-    }
 
     render() {
         return (
 
             <div className="sign-in">
-
+                <div className="greeting">
+                    <h1>Henllo</h1>
+                </div>
                 <TextInput
                     label="Phone:"
                     onChangeFromProps={(event) => { this.setState({ phone: event.target.value }) }}
-                    valueFromProps={this.state.Email}
+                    valueFromProps={this.state.phone}
                 />
                 <TextInput
                     label="Password:"
                     onChangeFromProps={(event) => { this.setState({ password: event.target.value }) }}
-                    valueFromProps={this.state.Pincode}
+                    valueFromProps={this.state.password}
                 />
                 <div className="buttons">
                     <button className="button" onClick={() => this.setState({ phone: '', password: '' })}>Clear</button>
@@ -62,6 +63,8 @@ class SignIn extends Component {
 const mapStateToProps = state => {
     return {
         num: state.number,
+        phone: state.phone,
+        password: state.password,
     }
 }
 

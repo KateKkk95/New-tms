@@ -1,7 +1,28 @@
-/* .page-users {
-    padding-top: 10vh;
-    width: 50%;
-    border-style: ridge;
+.card_page {
+    width: 100%;
+    min-height: 100vh;
+    padding-left: 37%;
+    padding-top: 5%;
+    margin-bottom: 40%;
+    color: #333;
+    background-color: rgb(180, 211, 221);
+    display: block;
+    background-image: url(../../3nzkub.png);
+    background-repeat: no-repeat;
+}
+
+.profile_info {
+    display: flex;
+    flex-flow: column-reverse;
+    padding: 1rem;
+    background-color: whitesmoke;
+    padding-top: 2rem;
+    width: 30%;
     border: 2px solid rgba(11, 56, 70, 0.719);
     border-radius: 5px;
-} */
+    line-height: 0.3;
+}
+
+.img {
+    width: 40%;
+}

@@ -1,46 +1,57 @@
-import React, { useEffect, useState } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 
 import { Card } from '../../components';
+import { getUsers } from '../../actions';
 import './index.js';
 
 
 
-const UsersPage = () => {
+class UsersPage extends Component {
 
-    const [users, setUsers] = useState([]);
+    componentDidMount = async () => {
 
-    useEffect(() => {
-        const getUsers = async () => {
+        try {
             const response = await axios.get('http://localhost:3001/users');
-            setUsers(response.data);
+            this.props.getUsers(response.data);
         }
-        getUsers();
+        catch (error) {
+            console.log(error);
+        }
 
-    }, []);
+    }
 
-    return (
-        <div className="page">
-            <div className="page-users">
-                {users.map((item, i) => {
-                    return (
-                        <Link
-                            key={item._id}
-                            to={`/users/${item.index}`}
-                        >
-                            <Card
-                                picutre={item.picutre}
-                                name={item.name}
-                                index={item.index}
-                            />
-                        </Link >
-                    )
-                })}
+    render() {
+
+        return (
+            <div className="page">
+                <div className="page-users">
+                    {this.props.Users.map((item, i) => {
+                        return (
+                            <Link
+                                key={item._id}
+                                to={`/users/${item.index}`}
+                            >
+                                <Card
+                                    picture={item.picture}
+                                    name={item.name}
+                                    index={item.index}
+                                />
+                            </Link >
+                        )
+                    })}
+                </div>
+
             </div>
-
-        </div>
-    )
+        )
+    }
 }
-export default UsersPage;
+const mapStateToProps = state => {
+    return {
+        Users: state.users
+    };
+}
+
+export default connect(mapStateToProps, { getUsers })(UsersPage);

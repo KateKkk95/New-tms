@@ -2,6 +2,9 @@ const initialState = {
     number: 0,
     token: null,
     user: null,
+    users: [],
+    profile: null,
+    friends: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -28,6 +31,25 @@ const reducer = (state = initialState, action) => {
             user: action.payload
         };
     }
+    if (action.type === 'getUsers') {
+        return {
+            ...state,
+            users: action.payload
+        };
+    }
+    if (action.type === 'showProfile') {
+        return {
+            ...state,
+            profile: action.payload
+        };
+    }
+    if (action.type === 'friendsRow') {
+        return {
+            ...state,
+            friends: action.payload
+        };
+    }
+
 
     return state;
 };
