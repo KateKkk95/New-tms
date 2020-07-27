@@ -1,10 +1,10 @@
 .card_page {
     width: 100%;
     min-height: 100vh;
-    padding-left: 60%;
+    padding-left: 36%;
     padding-top: 5%;
     margin-bottom: 40%;
-    color: #333;
+    color: rgb(24, 22, 22);
     background-color: rgb(180, 211, 221);
     display: block;
     background-image: url(../../3nzkub.png);
@@ -17,13 +17,14 @@
     padding: 1rem;
     background-color: rgba(147, 210, 228, 0.4);
     padding-top: 2rem;
-    width: 30%;
+    width: 34%;
+    height: 16rem;
     border: 2px solid rgba(11, 56, 70, 0.719);
     border-radius: 15px;
     line-height: 0.3;
 }
 
 .img {
-    width: 40%;
+    width: 20%;
     border-radius: 80px;
 }
