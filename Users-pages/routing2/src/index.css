@@ -21,12 +21,14 @@ body {
 .page {
   width: 100%;
   min-height: 100vh;
+  padding-top: 5rem;
   color: #333;
   background-color: rgb(180, 211, 221);
   display: flex;
   justify-content: center;
   background-image: url(./3nzkub.png);
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 a, a:hover {

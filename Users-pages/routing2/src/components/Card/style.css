@@ -7,13 +7,14 @@
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     border-radius: 0.5rem;
-    background-color: whitesmoke;
+    background-color: rgb(183, 220, 241, 0.4);
 }
 
 .card-image {
     width: 6rem;
     height: 6rem;
     margin-right: 1rem;
+    border-radius: 47px;
 }
 
 .card-content {
@@ -23,7 +24,7 @@
 }
 
 .card_button {
-    background-color: #ff8b38;
+    background-color: rgba(241, 189, 139, 0.658);
     height: 43px;
     width: 118px;
     color: white;
